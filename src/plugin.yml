@@ -1,0 +1,23 @@
+name: RewexBungeecord
+version: 1.2
+author: Rewex
+main: de.rewex.server.Main
+commands:
+  coins:
+  connect:
+  discord:
+  gamepass:
+  hub:
+  ping:
+  stats:
+  tokens:
+  wartung:
+  broadcast:
+  find:
+  ban:
+  tempban:
+  unban:
+  unmute:
+  kick:
+  report:
+  
