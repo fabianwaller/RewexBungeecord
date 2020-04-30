@@ -32,10 +32,10 @@ public class BroadcastCmd extends Command {
 				}
 				
 				msg = ChatColor.translateAlternateColorCodes('&', msg);
-				ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + RangManager.getName(p) + " §7» " + msg));
+				ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + RangManager.getName(p) + " Â§7Â» " + msg));
 				
 			} else {
-				p.sendMessage(new TextComponent(Main.prefix + "§c/broadcast <Nachricht>"));
+				p.sendMessage(new TextComponent(Main.prefix + "Â§c/broadcast <Nachricht>"));
 			}
 			
 		} else {

@@ -10,7 +10,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 
 public class MySQL {
 	
-	public static String prefix =  "§7> §eMySQL §7| ";
+	public static String prefix =  "Â§7Â» Â§eMySQL Â§7| ";
 	public static String host = "localhost";
 	public static String database = "Server";
 	public static String user = "Fabian";
@@ -23,11 +23,11 @@ public class MySQL {
 		if (!isConnected()) {
 			try {
 				con = DriverManager.getConnection("jdbc:mysql://" + host + ":3306/" + database + "?autoReconnect=true", user, password);
-				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "§aconnected!"));
+				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "Â§aconnected!"));
 				
 			}
 			catch (SQLException e) {
-				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "§cError while connecting!"));
+				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "Â§cError while connecting!"));
 			}
 		}
 	}
@@ -36,10 +36,10 @@ public class MySQL {
 		if (isConnected()) {
 			try {
 				con.close();
-				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "§adisconnected!"));
+				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "Â§adisconnected!"));
 			}
 			catch (SQLException e) {
-				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "§cError while disconnecting!"));
+				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "Â§cError while disconnecting!"));
 			}
 		}
 	}
@@ -52,14 +52,15 @@ public class MySQL {
 		if (isConnected()) {
 			try {
 				con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS PLAYERS (UUID VARCHAR(64), COINS int, TOKENS int, " +
-						"GAMEPASS VARCHAR(64), SPIELZEIT VARCHAR(64), ONLINE VARCHAR(64)");
-				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "§7PLAYERS TABLE §acreated"));
+						"GAMEPASS VARCHAR(64), SPIELZEIT VARCHAR(64), ONLINE VARCHAR(64))");
+				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "Â§7PLAYERS TABLE Â§acreated"));
 		        con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS BannedPlayers (UUID VARCHAR(64), Spielername VARCHAR(16), Bannedfrom VARCHAR(16), Ende VARCHAR(64), Grund VARCHAR(64))");
 		        con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS MutedPlayers (UUID VARCHAR(64), Spielername VARCHAR(16), Mutedfrom VARCHAR(16), Ende VARCHAR(64), Grund VARCHAR(64))");
-		        ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "§7BannedPlayers / MutedPlayers TABLE §acreated"));
+		        ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "Â§7BannedPlayers / MutedPlayers TABLE " +
+						"Â§acreated"));
 			}
 			catch (SQLException e) {
-				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "§cERROR §7while creating §7PLAYERS TABLES"));
+				ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(prefix + "Â§cERROR Â§7while creating Â§7PLAYERS TABLES"));
 				e.printStackTrace();
 			}
 		}
@@ -84,7 +85,7 @@ public class MySQL {
 		}
 		catch (SQLException e) {
 			connect();
-			System.err.println(e);
+			e.printStackTrace();
 		}
 		return rs;
 	}

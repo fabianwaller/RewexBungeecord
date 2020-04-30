@@ -20,11 +20,11 @@ public class GamepassCmd extends Command {
 			
 			if(GamepassManager.hasPass(p.getUniqueId().toString())) {
 				
-				p.sendMessage(new TextComponent(Main.passpr + "§7Dein §6Gamepass §7ist §aaktiviert"));
-				p.sendMessage(new TextComponent(Main.passpr + "§7Verbleibende Zeit: " + GamepassManager.getRemainingTime(p.getUniqueId().toString())));
+				p.sendMessage(new TextComponent(Main.passpr + "Â§7Dein Â§6Gamepass Â§7ist Â§aaktiviert"));
+				p.sendMessage(new TextComponent(Main.passpr + "Â§7Verbleibende Zeit: " + GamepassManager.getRemainingTime(p.getUniqueId().toString())));
 				
 			} else {
-				p.sendMessage(new TextComponent(Main.passpr + "§7Dein §6Gamepass §7ist §cdeaktiviert§7, aktiviere ihn zuerst im Shop"));
+				p.sendMessage(new TextComponent(Main.passpr + "Â§7Dein Â§6Gamepass Â§7ist Â§cdeaktiviertÂ§7, aktiviere ihn zuerst im Shop"));
 			}
 			
 		} else { 

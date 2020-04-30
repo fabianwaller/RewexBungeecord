@@ -34,14 +34,14 @@ public class FindCmd extends Command {
 			} else {
 				
 				/*if(a.getName().equalsIgnoreCase(sender.getName())) {
-					sender.sendMessage(new TextComponent(Main.prefix + "§cDu kannst dich nicht selbst suchen§8!"));
+					sender.sendMessage(new TextComponent(Main.prefix + "Â§cDu kannst dich nicht selbst suchenÂ§8!"));
 					return;
 				}*/
-				sender.sendMessage(new TextComponent(Main.prefix + "Der Spieler " + RangManager.getName(a) + " §7befindet sich auf §a" + info.getName()));
+				sender.sendMessage(new TextComponent(Main.prefix + "Der Spieler " + RangManager.getName(a) + " Â§7befindet sich auf Â§a" + info.getName()));
 			}
 			
 		} else {
-			sender.sendMessage(new TextComponent(Main.prefix + "§c/find <Spieler>"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§c/find <Spieler>"));
 		}
 		
 		

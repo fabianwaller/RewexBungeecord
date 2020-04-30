@@ -9,7 +9,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 public class GamepassManager {
 	
 	public static void setPass(String uuid, long seconds) {
-		long end = 0L;
+		long end;
 		if(seconds == -1L) {
 			end = -1L;
 		} else {
@@ -19,7 +19,7 @@ public class GamepassManager {
 		}
 		MySQL.update("UPDATE PLAYERS SET GAMEPASS='" + end + "' WHERE UUID='" + uuid + "'");
 		if(ProxyServer.getInstance().getPlayer(uuid) != null) {
-			ProxyServer.getInstance().getPlayer(uuid).sendMessage(new TextComponent(Main.passpr + "§7Dein §1Gamepass §7wurde erfolgreich §aaktiviert"));
+			ProxyServer.getInstance().getPlayer(uuid).sendMessage(new TextComponent(Main.passpr + "Â§7Dein Â§1Gamepass Â§7wurde erfolgreich Â§aaktiviert"));
 		}
 	}
 	
@@ -58,7 +58,7 @@ public class GamepassManager {
 		long current = System.currentTimeMillis();
 		long end = getEnd(uuid).longValue();
 	    if (end == -1L) {
-	    	return "§9PERMANENT";
+	    	return "Â§9PERMANENT";
 	    }
 	    long millis = end - current;
 	    
@@ -88,7 +88,7 @@ public class GamepassManager {
 	    	weeks += 1L;
 	    }
 	    return 
-	    "§6" + weeks + "w " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+	    "Â§6" + weeks + "w " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 	  }
 	
 	

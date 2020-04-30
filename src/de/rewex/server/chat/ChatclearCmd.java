@@ -21,7 +21,7 @@ public class ChatclearCmd extends Command {
 			if(args.length == 0) {
 				
 				clearChat(p);
-				p.sendMessage(new TextComponent(Main.prefix + "Dein §aChat §7wurde geleert"));
+				p.sendMessage(new TextComponent(Main.prefix + "Dein Â§aChat Â§7wurde geleert"));
 				
 			} else if (args.length == 1) {
 				
@@ -40,18 +40,18 @@ public class ChatclearCmd extends Command {
 						i++;
 					}
 					for(ProxiedPlayer all : p.getServer().getInfo().getPlayers()) {
-						all.sendMessage(new TextComponent(Main.prefix + "§7Der §aChat §7wurde von " + RangManager.getName(p) + " §7geleert"));
+						all.sendMessage(new TextComponent(Main.prefix + "Â§7Der Â§aChat Â§7wurde von " + RangManager.getName(p) + " Â§7geleert"));
 					}
 					
 				} else {
 					
-					p.sendMessage(new TextComponent(Main.prefix + "§c7chatclear | /chatclear @all"));
+					p.sendMessage(new TextComponent(Main.prefix + "Â§c7chatclear | /chatclear @all"));
 					
 				}
 				
 			} else {
 				
-				p.sendMessage(new TextComponent(Main.prefix + "§c7chatclear | /chatclear @all"));
+				p.sendMessage(new TextComponent(Main.prefix + "Â§c7chatclear | /chatclear @all"));
 				
 			}
 			

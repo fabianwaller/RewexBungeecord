@@ -11,7 +11,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 public class BanManager {
 	
 	public static void ban(String playername, String uuid, String bannedfrom, String reason, long seconds) {
-		long end = 0L;
+		long end;
 	    if (seconds == -1L) {
 	    	end = -1L;
 	    } else {
@@ -21,13 +21,13 @@ public class BanManager {
 	    }
 	    MySQL.update("INSERT INTO BannedPlayers (UUID, Spielername, Bannedfrom, Ende, Grund) VALUES ('" + uuid + "','" + playername + "','" + bannedfrom + "','" + end + "','" + reason + "')");
 	    if (ProxyServer.getInstance().getPlayer(playername) != null) {
-			ProxyServer.getInstance().getPlayer(playername).disconnect(new TextComponent("§7Du wurdest von §9§lRewex.de§r §7gebannt!"
+			ProxyServer.getInstance().getPlayer(playername).disconnect(new TextComponent("Â§7Du wurdest von Â§9Â§lRewex.deÂ§r Â§7gebannt!"
 					+ "\n "
-					+ "\n§7Grund: §c" + getReason(uuid) 
-					+ "\n§7Verbleibende Zeit: §c" + getRemainingTime(uuid) 
-				    + "\n§7Gebannt von: " + getBannedFrom(uuid)
+					+ "\nÂ§7Grund: Â§c" + getReason(uuid) 
+					+ "\nÂ§7Verbleibende Zeit: Â§c" + getRemainingTime(uuid) 
+				    + "\nÂ§7Gebannt von: " + getBannedFrom(uuid)
 				    + "\n"
-				    + "\n§7Du kannst auf unserm §9Discord §7einen Entbannungsantrag stellen."
+				    + "\nÂ§7Du kannst auf unserm Â§9Discord Â§7einen Entbannungsantrag stellen."
 			        + "\n "));
 	    }
 	}
@@ -118,7 +118,7 @@ public class BanManager {
 		long current = System.currentTimeMillis();
 	    long end = getEnd(uuid).longValue();
 	    if (end == -1L) {
-	      return "§cPERMANENT";
+	      return "Â§cPERMANENT";
 	    }
 	    long millis = end - current;
 	    
@@ -149,7 +149,7 @@ public class BanManager {
 	      weeks += 1L;
 	    }
 	    return 
-	      "§c" + weeks + "w " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+	      "Â§c" + weeks + "w " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 	  }
 
 }

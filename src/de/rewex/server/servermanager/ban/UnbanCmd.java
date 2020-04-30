@@ -19,14 +19,14 @@ public class UnbanCmd extends Command {
 		}
 		
 		if(args.length != 1) {
-			sender.sendMessage(new TextComponent(Main.prefix + "§c/unban <Spieler>"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§c/unban <Spieler>"));
 			return;
 		}
 		
 		String playername = args[0];
 		if(BanManager.isBanned(BanManager.getUUID(playername))) {
 			BanManager.unban(BanManager.getUUID(playername));
-			sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + playername + " §aerfolgreich §7vom Netzwerk entbannt"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + playername + " Â§aerfolgreich Â§7vom Netzwerk entbannt"));
 			return;
 		}
 		sender.sendMessage(new TextComponent(Main.prefix + "Der Spieler " + playername + " ist nicht vom Netzwerk gebannt"));

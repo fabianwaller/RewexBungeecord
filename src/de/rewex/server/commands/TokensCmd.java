@@ -20,7 +20,7 @@ public class TokensCmd extends Command {
 			
 			int tokens = PlayersAPI.getTokens(p.getUniqueId().toString());
 			
-			p.sendMessage(new TextComponent(Main.tokenspr + "Deine Tokens: §a" + tokens));
+			p.sendMessage(new TextComponent(Main.tokenspr + "Deine Tokens: Â§a" + tokens));
 			
 			
 		} else { 

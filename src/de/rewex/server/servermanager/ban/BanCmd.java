@@ -22,7 +22,7 @@ public class BanCmd extends Command {
 		}
 		
 		if(args.length < 2) {
-			sender.sendMessage(new TextComponent(Main.prefix + "§c/ban <Spieler> <Grund>"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§c/ban <Spieler> <Grund>"));
 			return;
 		}
 		
@@ -33,7 +33,7 @@ public class BanCmd extends Command {
 			return;
 		}
 		if(BanManager.isBanned(b.getUniqueId().toString())) {
-			sender.sendMessage(new TextComponent(Main.prefix + "§cDieser Spieler ist bereits gebannt§8!"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§cDieser Spieler ist bereits gebanntÂ§8!"));
 			return;
 		}
 
@@ -41,22 +41,22 @@ public class BanCmd extends Command {
 		for(int i = 1; i<args.length; i++) {
 			reason = reason + args[i] + " ";
 		}
-		String bannedfrom = "";
+		String bannedfrom;
 		
 		if(sender instanceof ProxiedPlayer) {
 			ProxiedPlayer p = (ProxiedPlayer) sender;
 			/*if(b.hasPermission("server.antiban")) {
-				sender.sendMessage(new TextComponent(Main.prefix + "§cDu kannst diesen Spieler nicht vom Netzwerk bannen"));
+				sender.sendMessage(new TextComponent(Main.prefix + "Â§cDu kannst diesen Spieler nicht vom Netzwerk bannen"));
 				return;
 			}*/
 			bannedfrom = RangManager.getName(p);
 			
 		} else {
-			bannedfrom = "§cSystem";
+			bannedfrom = "Â§cSystem";
 		}
 		
 		BanManager.ban(b.getName(), b.getUniqueId().toString(), bannedfrom, reason, -1L);
-		sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + RangManager.getName(b) + " §cpermanent §7vom Netzwerk wegen §c" + reason + "§7gebannt"));
+		sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + RangManager.getName(b) + " Â§cpermanent Â§7vom Netzwerk wegen Â§c" + reason + "Â§7gebannt"));
 		
 	}
 

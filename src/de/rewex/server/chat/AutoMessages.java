@@ -24,13 +24,13 @@ public class AutoMessages {
 				number++;
 				switch(number) {
 					case 1:
-						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "ง7Verwende /discord um auf unseren Discord Server zu gelangen"));
+						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "ยง7Verwende /discord um auf unseren Discord Server zu gelangen"));
 						break;
 					case 2:
-						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "ง7Verdiene mehr Coins mit dem ง6GAMEPASS ง7und erhalte exklusive Items und Effekte"));
+						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "ยง7Verdiene mehr Coins mit dem ยง6GAMEPASS ยง7und erhalte exklusive Items und Effekte"));
 						break;
 					case 3:
-						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "Sammle Tokens, upgrade deinen Rang und werde zur ง9Legende"));
+						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "Sammle Tokens, upgrade deinen Rang und werde zur ยง9Legende"));
 						break;
 				}
 				

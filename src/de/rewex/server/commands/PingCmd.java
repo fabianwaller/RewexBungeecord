@@ -17,7 +17,7 @@ public class PingCmd extends Command {
 		if((sender instanceof ProxiedPlayer)) {
 			ProxiedPlayer p = (ProxiedPlayer) sender;
 			
-			p.sendMessage(new TextComponent("§7> §ePing §7| Dein Ping §e" + p.getPing() + "ms"));
+			p.sendMessage(new TextComponent("Â§7> Â§ePing Â§7| Dein Ping Â§e" + p.getPing() + "ms"));
 			
 		} else { 
 			sender.sendMessage(new TextComponent(Main.noplayer));

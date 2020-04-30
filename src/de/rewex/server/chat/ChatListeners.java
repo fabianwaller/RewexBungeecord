@@ -38,10 +38,10 @@ public class ChatListeners implements Listener {
 					MuteManager.unmute(p.getUniqueId().toString());
 				}
 				if(MuteManager.isMuted(p.getUniqueId().toString())) {
-					p.sendMessage(new TextComponent(Main.prefix + "§7Du wurdest von §9§lRewex.de§r §cgemuted§8!"));
-					p.sendMessage(new TextComponent(Main.prefix + "§7Grund: §c" + MuteManager.getReason(p.getUniqueId().toString())));
-					p.sendMessage(new TextComponent(Main.prefix + "§7Verbleibende Zeit: §c" + MuteManager.getRemainingTime(p.getUniqueId().toString())));
-					p.sendMessage(new TextComponent(Main.prefix + "§7Gemuted von: " + MuteManager.getMutedFrom(p.getUniqueId().toString())));
+					p.sendMessage(new TextComponent(Main.prefix + "Â§7Du wurdest von Â§9Â§lRewex.deÂ§r Â§cgemutedÂ§8!"));
+					p.sendMessage(new TextComponent(Main.prefix + "Â§7Grund: Â§c" + MuteManager.getReason(p.getUniqueId().toString())));
+					p.sendMessage(new TextComponent(Main.prefix + "Â§7Verbleibende Zeit: Â§c" + MuteManager.getRemainingTime(p.getUniqueId().toString())));
+					p.sendMessage(new TextComponent(Main.prefix + "Â§7Gemuted von: " + MuteManager.getMutedFrom(p.getUniqueId().toString())));
 					e.setCancelled(true);
 				}
 			}

@@ -20,7 +20,7 @@ public class CoinsCmd extends Command {
 			
 			int coins = PlayersAPI.getCoins(p.getUniqueId().toString());
 			
-			p.sendMessage(new TextComponent(Main.coinspr + "Deine Coins: §b" + coins));
+			p.sendMessage(new TextComponent(Main.coinspr + "Deine Coins: Â§b" + coins));
 			
 			
 		} else { 

@@ -23,9 +23,9 @@ public class WartungCmd extends Command {
 		// /wartung toggle true
 		if(args.length==1 && args[0].equalsIgnoreCase("status")) {
 			if(ConfigManager.getWartung() == true) {
-				sender.sendMessage(new TextComponent(Main.prefix + "§7Wartungsmodus ist §ceingeschaltet"));
+				sender.sendMessage(new TextComponent(Main.prefix + "Â§7Wartungsmodus ist Â§ceingeschaltet"));
 			} else {
-				sender.sendMessage(new TextComponent(Main.prefix + "§7Wartungsmodus ist §aausgeschaltet"));
+				sender.sendMessage(new TextComponent(Main.prefix + "Â§7Wartungsmodus ist Â§aausgeschaltet"));
 			}
 			
 		} else if(args.length>=1 && args[0].equalsIgnoreCase("toggle")) {
@@ -33,7 +33,7 @@ public class WartungCmd extends Command {
 			if(ConfigManager.getWartung()==true) {
 			
 				ConfigManager.setWartung(false);
-				sender.sendMessage(new TextComponent(Main.prefix + "§7Wartungsmodus wurde §aausgeschaltet"));
+				sender.sendMessage(new TextComponent(Main.prefix + "Â§7Wartungsmodus wurde Â§aausgeschaltet"));
 			
 			} else {
 				
@@ -43,24 +43,24 @@ public class WartungCmd extends Command {
 				} 
 					
 				ConfigManager.setWartung(true);
-				sender.sendMessage(new TextComponent(Main.prefix + "§7Wartungsmodus wurde §ceingeschaltet"));
+				sender.sendMessage(new TextComponent(Main.prefix + "Â§7Wartungsmodus wurde Â§ceingeschaltet"));
 				
 				if(kickplayers==true) {
 					for(ProxiedPlayer kick : ProxyServer.getInstance().getPlayers()) {
 						if(!kick.hasPermission("server.wartung.join")) {
-							kick.disconnect(new TextComponent("§eRewex.de §7x §c§lWartungen\n"
+							kick.disconnect(new TextComponent("Â§eRewex.de Â§7x Â§cÂ§lWartungen\n"
 									+ "\n"
-									+ "§7Grund x §cWartungsarbeiten"  
+									+ "Â§7Grund x Â§cWartungsarbeiten"  
 									+ "\n"));
 						}
 					}
-					sender.sendMessage(new TextComponent(Main.prefix + "§7Spieler wurden vom Netzwerk gekickt"));
+					sender.sendMessage(new TextComponent(Main.prefix + "Â§7Spieler wurden vom Netzwerk gekickt"));
 				}
 				
 			}
 			
 		} else {
-			sender.sendMessage(new TextComponent(Main.prefix + "§c/wartung status §7| §c/wartung toggle <kick true/false* (beim einschalten)>"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§c/wartung status Â§7| Â§c/wartung toggle <kick true/false* (beim einschalten)>"));
 		}
 		
 		

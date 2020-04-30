@@ -37,24 +37,24 @@ public class KickCmd extends Command {
 						ProxiedPlayer p = (ProxiedPlayer) sender;
 						
 						/*if(player.getName().equalsIgnoreCase(p.getName())) {
-							p.sendMessage(new TextComponent(Main.prefix + "§cDu kannst dich nicht selbst vom Netzwerk kicken"));
+							p.sendMessage(new TextComponent(Main.prefix + "Â§cDu kannst dich nicht selbst vom Netzwerk kicken"));
 							return;
 						}*/
 						
 						if(player.hasPermission("server.antikick")) {
-							sender.sendMessage(new TextComponent(Main.prefix + "§cDu kannst diesen Spieler nicht vom Netzwerk kicken"));
+							sender.sendMessage(new TextComponent(Main.prefix + "Â§cDu kannst diesen Spieler nicht vom Netzwerk kicken"));
 							return;
 						}
 						
 						kicker = RangManager.getName(p);
 						
 					} else {
-						kicker = "§cSystem";
+						kicker = "Â§cSystem";
 					}
 					
 					kickPlayer(player, reason, kicker);
 					
-					sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + RangManager.getName(player) + " §7vom Netzwerk wegen §c" + reason + " §7gegkickt"));
+					sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + RangManager.getName(player) + " Â§7vom Netzwerk wegen Â§c" + reason + " Â§7gegkickt"));
 					
 				} else {
 					sender.sendMessage(new TextComponent(Main.offplayer));
@@ -62,7 +62,7 @@ public class KickCmd extends Command {
 				
 				
 			} else {
-				sender.sendMessage(new TextComponent(Main.prefix + "§c/kick <Spieler> <Grund>"));
+				sender.sendMessage(new TextComponent(Main.prefix + "Â§c/kick <Spieler> <Grund>"));
 			}
 			
 	
@@ -71,10 +71,10 @@ public class KickCmd extends Command {
 	}
 	
 	public static void kickPlayer(ProxiedPlayer player, String reason, String kicker) {
-		player.disconnect(new TextComponent("§7Du wurdest von §9§lRewex.de§r §7gekickt!"
+		player.disconnect(new TextComponent("Â§7Du wurdest von Â§9Â§lRewex.deÂ§r Â§7gekickt!"
 				+ "\n "
-				+ "\n§7Grund:§c" + reason 
-			    + "\n§7Gekickt von: " + kicker
+				+ "\nÂ§7Grund:Â§c" + reason 
+			    + "\nÂ§7Gekickt von: " + kicker
 		        + "\n "));
 	}
 	

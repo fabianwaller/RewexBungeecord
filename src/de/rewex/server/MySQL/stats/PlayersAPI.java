@@ -24,7 +24,8 @@ public class PlayersAPI {
 	  
 	public static void createPlayer(String uuid) {
 		if (!playerExists(uuid)) {
-			MySQL.update("INSERT INTO PLAYERS (UUID, COINS, TOKENS, GAMEPASS, RANG) VALUES ('" + uuid + "', '0', '0', '0', 'Spieler');");
+			MySQL.update("INSERT INTO PLAYERS (UUID, COINS, TOKENS, GAMEPASS, SPIELZEIT, ONLINE) VALUES ('" + uuid + "', '0', '0', '0', " +
+					"'0', '0');");
 		}
 	}
 	
@@ -125,34 +126,4 @@ public class PlayersAPI {
 			removeTokens(uuid, coins);
 		}
 	}
-	
-	public static String getRang(String uuid) {
-	    if (playerExists(uuid)) {
-	    	try {
-	    		ResultSet rs = MySQL.getResult("SELECT * FROM PLAYERS WHERE UUID='" + uuid + "'");
-	    		if (rs.next()) {
-	    			return rs.getString("Rang");
-	    		}
-	    	}
-	    	catch (SQLException e)
-	    	{
-	        e.printStackTrace();
-	    	}
-	    }
-	    else {
-	    	createPlayer(uuid);
-	    	getRang(uuid);
-	    }
-	    return null;
-	}
-	
-	public static void setRang(String uuid, String rang) {
-		if (playerExists(uuid)) {
-			MySQL.update("UPDATE PLAYERS SET RANG='" + rang + "' WHERE UUID='" + uuid + "'");
-		} else {
-			createPlayer(uuid);
-			setRang(uuid, rang);
-		}
-	}
-
 }

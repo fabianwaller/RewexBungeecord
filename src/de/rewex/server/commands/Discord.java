@@ -22,11 +22,11 @@ public class Discord extends Command {
 			ProxiedPlayer p = (ProxiedPlayer) sender;
 			
 			TextComponent tc = new TextComponent();
-			tc.setText("ง7> ง9Discord ง7| Klicke งbhier ง7um unserem Discord Server beizutreten");
+			tc.setText("ยง7> ยง9Discord ยง7| Klicke hier um unserem Discord Server beizutreten");
 			//tc.setItalic(true);
 			tc.setClickEvent(new ClickEvent(Action.OPEN_URL, "https://discord.gg/PgTmmR3"));
 			tc.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT,
-					new ComponentBuilder("ง9Rewex.de").create())); 
+					new ComponentBuilder("ยง9Rewex.de").create()));
 			p.sendMessage(tc);
 
 			

@@ -23,7 +23,7 @@ public class HubCmd extends Command {
 				ServerInfo target = ProxyServer.getInstance().getServerInfo("Lobby-1");
 				player.connect(target);
 			} else {
-				player.sendMessage(new TextComponent(Main.prefix + "§cDu bist bereits auf einer Lobby§8!"));
+				player.sendMessage(new TextComponent(Main.prefix + "Â§cDu bist bereits auf einer LobbyÂ§8!"));
 			}
 			
 		} else { 

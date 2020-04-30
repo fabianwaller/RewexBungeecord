@@ -31,7 +31,7 @@ public class ReportCmd extends Command {
 			
 			String player = args[0];
 			if(player.equalsIgnoreCase(p.getName())) {
-				p.sendMessage(new TextComponent(Main.prefix + "§cDu kannst dich nicht selbst reporten"));
+				p.sendMessage(new TextComponent(Main.prefix + "Â§cDu kannst dich nicht selbst reporten"));
 				return;
 				
 			} else if(ProxyServer.getInstance().getPlayer(player) == null) {
@@ -48,21 +48,21 @@ public class ReportCmd extends Command {
 				String reason = stringbuilder.toString();
 				for(ProxiedPlayer team : Main.getInstance().getProxy().getPlayers()) {
 					if(team.hasPermission("server.seereports")) {
-						team.sendMessage(new TextComponent(Main.prefix + "Der Spieler " + RangManager.getName(rp) + " §7wurde von " + RangManager.getName(p) + " §7wegen§c" + reason + "§7reportet"));
+						team.sendMessage(new TextComponent(Main.prefix + "Der Spieler " + RangManager.getName(rp) + " Â§7wurde von " + RangManager.getName(p) + " Â§7wegenÂ§c" + reason + "Â§7reportet"));
 
 						TextComponent tc = new TextComponent();
-						tc.setText(Main.prefix + "§aKlicke hier um den Report zu bearbeiten");
+						tc.setText(Main.prefix + "Â§aKlicke hier um den Report zu bearbeiten");
 						tc.setItalic(true);
 						tc.setClickEvent(new ClickEvent(Action.RUN_COMMAND, "/connect " + FindCmd.searchPlayer(rp.getName())));
 						tc.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT,
-								new ComponentBuilder("§7Server: §a" + FindCmd.searchPlayer(rp.getName())).create())); 
+								new ComponentBuilder("Â§7Server: Â§a" + FindCmd.searchPlayer(rp.getName())).create())); 
 						team.sendMessage(tc);
 					}
 				}
 			}
 			
 		} else {
-			p.sendMessage(new TextComponent(Main.prefix + "§c/report <Spieler> <Grund>"));
+			p.sendMessage(new TextComponent(Main.prefix + "Â§c/report <Spieler> <Grund>"));
 		}
 			
 	}

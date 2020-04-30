@@ -25,7 +25,7 @@ public class ConnectCmd extends Command {
 			}
 					
 			if(args.length != 1) {
-				p.sendMessage(new TextComponent(Main.prefix + "§c/connect <Server>"));
+				p.sendMessage(new TextComponent(Main.prefix + "Â§c/connect <Server>"));
 				return;
 			}
 			
@@ -33,7 +33,7 @@ public class ConnectCmd extends Command {
 				ServerInfo target = ProxyServer.getInstance().getServerInfo(args[0]);
 				p.connect(target);
 			} else {
-				p.sendMessage(new TextComponent(Main.prefix + "§cDu bist bereits auf diesem Server"));
+				p.sendMessage(new TextComponent(Main.prefix + "Â§cDu bist bereits auf diesem Server"));
 			}
 			
 		} else { 
