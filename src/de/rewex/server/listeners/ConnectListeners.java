@@ -18,8 +18,8 @@ public class ConnectListeners implements Listener {
 	public void onPostLogin(PostLoginEvent e) {
 		ProxiedPlayer p = e.getPlayer();
 		
-		ChatclearCmd.clearChat(p);
-		p.sendMessage(new TextComponent(Main.prefix + "Willkommen auf dem §9§lRewex.de §r§7Minigames Netzwerk §7(§eBetaphase§7)"));
+		//ChatclearCmd.clearChat(p);
+		//p.sendMessage(new TextComponent(Main.prefix + "Willkommen auf dem §9§lRewex.de §r§7Minigames Netzwerk §7(§eBetaphase§7)"));
 		
 		PlayersAPI.createPlayer(p.getUniqueId().toString());
 

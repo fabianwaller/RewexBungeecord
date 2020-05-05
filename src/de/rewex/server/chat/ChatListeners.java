@@ -1,12 +1,16 @@
 package de.rewex.server.chat;
 
 import de.rewex.server.Main;
+import de.rewex.server.manager.utils.TimeUnit;
 import de.rewex.server.servermanager.mute.MuteManager;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.ChatEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatListeners implements Listener {
 	
@@ -27,7 +31,9 @@ public class ChatListeners implements Listener {
 		}
 		
 	}*/
-	
+
+	public static List<String> urlEnds = new ArrayList<>();
+
 	@EventHandler
 	public void onChat(ChatEvent e) {
 		if(e.getSender() instanceof ProxiedPlayer) {
@@ -45,6 +51,31 @@ public class ChatListeners implements Listener {
 					e.setCancelled(true);
 				}
 			}
+
+			int i = 0;
+			urlEnds.add(".com");
+			urlEnds.add(".de");
+			urlEnds.add(".fr");
+			urlEnds.add(".it");
+			urlEnds.add(".org");
+			urlEnds.add(".net");
+			urlEnds.add(".es");
+			urlEnds.add(".eu");
+			urlEnds.add("http://");
+			urlEnds.add("www.");
+			for(String s:urlEnds) {
+				if(e.getMessage().contains(s)) {
+					if(i==0) {
+						i++;
+					}
+					TimeUnit unit = TimeUnit.getUnit("tag");
+					long seconds = 1 * unit.getToSecond();
+					MuteManager.mute(p.getName(), p.getUniqueId().toString(), null, "Werbung", seconds);
+					e.setCancelled(true);
+				}
+			}
+
+
 
 		}
 		

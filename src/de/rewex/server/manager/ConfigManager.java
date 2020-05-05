@@ -25,6 +25,8 @@ public class ConfigManager {
 				set("wartung", Boolean.valueOf(true));
 				set("grund", "Wartungsmodus");
 				set("fortschritt", Integer.valueOf(0));
+
+				set("status", "&8&l+ &7Statusmeldung");
 				
 		        List<String> blockcmd = getStringList("commands_blocked");
 		        blockcmd.add("/?");
@@ -41,13 +43,15 @@ public class ConfigManager {
 		        blockcmd.add("/bukkit:?");
 		        blockcmd.add("/hd");
 		        blockcmd.add("/help");
-		       // ConfigManager.set("commands_blocked", blockcmd);
+				blockcmd.add("/cloud");
+		        ConfigManager.set("commands_blocked", blockcmd);
 		        
 		        List<String> zensur = getStringList("zensur");
 		        zensur.add("schwanz");
 		        zensur.add("penis");
 		        zensur.add("huso");
 		        zensur.add("penner");
+				zensur.add("l2p");
 		        zensur.add("nazi");
 		        zensur.add("arsch");
 		        zensur.add("arschloch");
@@ -66,7 +70,7 @@ public class ConfigManager {
 		        zensur.add("ficken");
 		        zensur.add("fick");
 		        zensur.add("Fick");
-		        //ConfigManager.set("zensur", zensur);
+		        ConfigManager.set("zensur", zensur);
 
 			} catch(IOException ex) {
 				Logger.getLogger("Loading Error: ConfigManager.java");
@@ -151,6 +155,16 @@ public class ConfigManager {
 	
 	public static void setWartung(boolean status) {
 		set("wartung", status);
+	}
+
+	public static String getStatus() {
+		try {
+			return getString("status");
+		}
+		catch (IOException ex) {
+			Logger.getLogger("getStatus: ConfigManager.java");
+		}
+		return "Wartungsmodus";
 	}
 	
 	public static List<String> getBlockedCommands() {

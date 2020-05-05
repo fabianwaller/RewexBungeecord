@@ -13,12 +13,12 @@ public class MotdChanger implements Listener {
 	public void onPing(ProxyPingEvent e) {
 		ServerPing con = e.getResponse();
 		if(ConfigManager.getWartung() == true) {
-			con.setDescriptionComponent(new TextComponent("§9Rewex.de §8x §r§7Minecraft Netzwerk §8➟ §a1.8§7-§a1.15.2§r\n"
+			con.setDescriptionComponent(new TextComponent("§b•§9● Rewex.de §8● §r§7Minecraft Netzwerk §8➟ §a1.8§7-§a1.15.2§r\n"
 					+ "§8> §cWartungsarbeiten "));
-			con.setVersion(new ServerPing.Protocol("§cWartungen", 2));
+			con.setVersion(new ServerPing.Protocol("§8➜ §cWartungen", 2));
 		} else {
-			con.setDescriptionComponent(new TextComponent("§9Rewex.de §8x §r§7Minecraft Netzwerk §8➟ §a1.8§7-§a1.15.2§r\n"
-					+ "§8§l+ §7NEUES §9§lRANGSYSTEM §r§8§l+ §b§lREWARDSYSTEM"));
+			con.setDescriptionComponent(new TextComponent("§b•§9● Rewex.de §8● §r§7Minecraft Netzwerk §8➟ §a1.8§7-§a1.15.2§r\n"
+					+ ConfigManager.getStatus().replace("&", "§")));
 		}
 		e.setResponse(con);
 

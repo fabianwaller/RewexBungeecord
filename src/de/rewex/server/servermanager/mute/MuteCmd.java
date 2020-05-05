@@ -25,8 +25,8 @@ public class MuteCmd extends Command {
 		}
 		
 		if(args.length < 3) {
-			sender.sendMessage(new TextComponent(Main.prefix + "§c/mute <Spieler> <Zeit> <Einheit> <Grund?>"));
-			sender.sendMessage(new TextComponent(Main.prefix + "§7Einheiten §esec§7/§emin§7/§estunde§7/§etag§7/§ewoche§7/"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§c/mute <Spieler> <Zeit> <Einheit> <Grund?>"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§7Einheiten Â§esecÂ§7/Â§eminÂ§7/Â§estundeÂ§7/Â§etagÂ§7/Â§ewoche"));
 			return;
 		}
 		
@@ -35,11 +35,11 @@ public class MuteCmd extends Command {
 		try {
 			value = Integer.valueOf(args[1]).intValue();
 		} catch (NumberFormatException e) {
-			sender.sendMessage(new TextComponent(Main.prefix + "§c<Zeit> muss eine Zahl sein"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§c<Zeit> muss eine Zahl sein"));
 			return;
 		}
 		if(value >= 500L) {
-			sender.sendMessage(new TextComponent(Main.prefix + "§c<Zeit> muss unter 500 liegen"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§c<Zeit> muss unter 500 liegen"));
 			return;
 		}
 		String unitString = args[2];
@@ -57,7 +57,7 @@ public class MuteCmd extends Command {
 			return;
 		}
 		if(MuteManager.isMuted(b.getUniqueId().toString())) {
-			sender.sendMessage(new TextComponent(Main.prefix + "§cDieser Spieler ist bereits gemuted§8!"));
+			sender.sendMessage(new TextComponent(Main.prefix + "Â§cDieser Spieler ist bereits gemutedÂ§8!"));
 			return;
 		}
 		
@@ -74,18 +74,18 @@ public class MuteCmd extends Command {
 		
 		if(sender instanceof ProxiedPlayer) {
 			ProxiedPlayer p = (ProxiedPlayer) sender;
-			/*if(b.hasPermission("server.antimute")) {
-				sender.sendMessage(new TextComponent(Main.prefix + "§cDu kannst diesen Spieler nicht vom Netzwerk muten"));
+			if(b.hasPermission("server.antimute")) {
+				sender.sendMessage(new TextComponent(Main.prefix + "Â§cDu kannst diesen Spieler nicht vom Netzwerk muten"));
 				return;
-			}*/
+			}
 			mutedfrom = RangManager.getName(p);
 			
 		} else {
-			mutedfrom = "§cSystem";
+			mutedfrom = "Â§cSystem";
 		}
 		
 		MuteManager.mute(b.getName(), b.getUniqueId().toString(), mutedfrom, reason, seconds);
-		sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + RangManager.getName(b) + " §7für §c" + value + " " + unit.getName() + " §7wegen §c" + reason + " §7gemutet§8!"));
+		sender.sendMessage(new TextComponent(Main.prefix + "Du hast " + RangManager.getName(b) + " Â§7fÃ¼r Â§c" + value + " " + unit.getName() + " Â§7wegen Â§c" + reason + " Â§7gemutetÂ§8!"));
 		
 	}
 

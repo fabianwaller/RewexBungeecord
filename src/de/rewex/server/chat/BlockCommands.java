@@ -31,7 +31,7 @@ public class BlockCommands implements Listener {
 			for(String zensur : ConfigManager.getZensurListe()) {
 				if(msg.contains(zensur) || msg.contains(zensur.toUpperCase())) {
 					e.setCancelled(true);
-					p.sendMessage(new TextComponent(Main.prefix + "§7Achte auf deine Wortwahl"));
+					p.sendMessage(new TextComponent(Main.prefix + "§cAchte auf deine Wortwahl"));
 					return;
 				}
 			}

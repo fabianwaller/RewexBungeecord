@@ -1,6 +1,7 @@
 package de.rewex.server;
 
 import de.rewex.server.MySQL.MySQL;
+import de.rewex.server.MySQL.stats.Spielzeit;
 import de.rewex.server.chat.AutoMessages;
 import de.rewex.server.chat.BlockCommands;
 import de.rewex.server.chat.BroadcastCmd;
@@ -34,14 +35,15 @@ import net.md_5.bungee.api.plugin.PluginManager;
 
 public class Main extends Plugin {
 	
-	public static String prefix = "§7» §9Server §7| ";
-	public static String coinspr = "§7» §bCoins §7| ";
-	public static String tokenspr = "§7» §aTokens §7| ";
-	public static String passpr = "§7» §6Gamepass §7| ";
+	public static String prefix = "§b•§9● Server §7| ";
+	public static String coinspr = "§1•§b● Coins §7| ";
+	public static String tokenspr = "§2•§a● Tokens §7| ";
+	public static String passpr = "§e•§6● Gamepass §7| ";
 	public static String noperm = prefix + "§cDazu hast du keine Rechte§8!";
 	public static String offplayer = prefix + "§cDieser Spieler ist offline§8!";
 	public static String noplayer = "[Server] Nur ein Spieler kann diesen Befehl ausführen";
 
+	Spielzeit spielzeit = new Spielzeit();
 	private static Main instance;
 	public static Main getInstance() {
 		return instance;
@@ -58,6 +60,7 @@ public class Main extends Plugin {
 
 		ConfigManager.loadConfiguration();
 		AutoMessages.registerTask();
+		spielzeit.startCounter();
 
 	    ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(Main.prefix + "§aPlugin aktiviert §7[§9" + getDescription().getVersion() + "§7]"));
 
