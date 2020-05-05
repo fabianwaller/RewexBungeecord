@@ -12,6 +12,7 @@ commands:
   stats:
   tokens:
   wartung:
+  joinme:
   broadcast:
   find:
   ban:

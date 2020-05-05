@@ -7,13 +7,7 @@ import de.rewex.server.chat.BlockCommands;
 import de.rewex.server.chat.BroadcastCmd;
 import de.rewex.server.chat.ChatListeners;
 import de.rewex.server.chat.ChatclearCmd;
-import de.rewex.server.commands.CoinsCmd;
-import de.rewex.server.commands.ConnectCmd;
-import de.rewex.server.commands.Discord;
-import de.rewex.server.commands.GamepassCmd;
-import de.rewex.server.commands.HubCmd;
-import de.rewex.server.commands.PingCmd;
-import de.rewex.server.commands.TokensCmd;
+import de.rewex.server.commands.*;
 import de.rewex.server.listeners.Fallback;
 import de.rewex.server.listeners.ConnectListeners;
 import de.rewex.server.listeners.MotdChanger;
@@ -36,10 +30,12 @@ import net.md_5.bungee.api.plugin.PluginManager;
 public class Main extends Plugin {
 	
 	public static String prefix = "§b•§9● Server §7| ";
+	public static String cloudpr = "§2•§a● Cloud §7| ";
 	public static String coinspr = "§1•§b● Coins §7| ";
 	public static String tokenspr = "§2•§a● Tokens §7| ";
 	public static String passpr = "§e•§6● Gamepass §7| ";
 	public static String noperm = prefix + "§cDazu hast du keine Rechte§8!";
+	public static String cloudnoperm = cloudpr + "§cDazu hast du keine Rechte§8!";
 	public static String offplayer = prefix + "§cDieser Spieler ist offline§8!";
 	public static String noplayer = "[Server] Nur ein Spieler kann diesen Befehl ausführen";
 
@@ -75,12 +71,13 @@ public class Main extends Plugin {
 		PluginManager pm = BungeeCord.getInstance().getPluginManager();
 
 		pm.registerCommand(this, new CoinsCmd("coins"));
-		pm.registerCommand(this, new ConnectCmd("connect"));
+		pm.registerCommand(this, new ConnectCmd("dfngz4ierzt7ndrhnfkegg")); //connect
 		pm.registerCommand(this, new Discord("discord"));
 		pm.registerCommand(this, new GamepassCmd("gamepass"));
 		pm.registerCommand(this, new BroadcastCmd("broadcast"));
 		pm.registerCommand(this, new ChatclearCmd("chatclear"));
 		pm.registerCommand(this, new HubCmd("hub"));
+		pm.registerCommand(this, new JoinmeCmd("joinme"));
 		pm.registerCommand(this, new PingCmd("ping"));
 		pm.registerCommand(this, new TokensCmd("tokens"));
 		
