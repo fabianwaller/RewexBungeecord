@@ -30,7 +30,7 @@ public class Fallback implements Listener {
 			}
 		}
 		
-		ServerInfo kickTo = Main.getInstance().getProxy().getServerInfo("lobby1");
+		ServerInfo kickTo = Main.getInstance().getProxy().getServerInfo("Lobby-1");
 		if((kickedFrom != null) && (kickedFrom.equals(kickTo))) {
 			return;
 		}

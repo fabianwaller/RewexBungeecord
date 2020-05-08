@@ -27,10 +27,10 @@ public class AutoMessages {
 						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "§7Verwende /discord um auf unseren Discord Server zu gelangen"));
 						break;
 					case 2:
-						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "§7Verdiene mehr Coins mit dem §6GAMEPASS §7und erhalte exklusive Items und Effekte"));
+						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "§7Verdiene mehr Coins mit dem §6Gamepass"));
 						break;
 					case 3:
-						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "Sammle Tokens, upgrade deinen Rang und werde zur §9Legende"));
+						ProxyServer.getInstance().broadcast(new TextComponent(Main.prefix + "§eBetaphase §8- §7Bugreports bitte über Discord einreichen"));
 						break;
 				}
 				

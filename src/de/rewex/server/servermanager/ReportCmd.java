@@ -26,8 +26,12 @@ public class ReportCmd extends Command {
 		}
 		
 		ProxiedPlayer p = (ProxiedPlayer) sender;
-		
-		if(args.length > 1) {
+
+		p.sendMessage(new TextComponent(Main.prefix + "§cDas Report Modul wird derzeit überarbeitet und steht deshalb nicht zur " +
+				"Verfügung"));
+		return;
+
+		/*if(args.length > 1) {
 			
 			String player = args[0];
 			if(player.equalsIgnoreCase(p.getName())) {
@@ -63,7 +67,7 @@ public class ReportCmd extends Command {
 			
 		} else {
 			p.sendMessage(new TextComponent(Main.prefix + "§c/report <Spieler> <Grund>"));
-		}
+		}*/
 			
 	}
 

@@ -33,7 +33,7 @@ public class ConnectCmd extends Command {
 				ServerInfo target = ProxyServer.getInstance().getServerInfo(args[0]);
 				p.connect(target);
 			} else {
-				p.sendMessage(new TextComponent(Main.prefix + "§cDu bist bereits auf diesem Server"));
+				p.sendMessage(new TextComponent(Main.cloudpr + "§cDu bist bereits auf diesem Server"));
 			}
 			
 		} else { 

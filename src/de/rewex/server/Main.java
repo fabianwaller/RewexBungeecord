@@ -1,5 +1,6 @@
 package de.rewex.server;
 
+import de.rewex.server.MySQL.GamepassManager;
 import de.rewex.server.MySQL.MySQL;
 import de.rewex.server.MySQL.stats.Spielzeit;
 import de.rewex.server.chat.AutoMessages;
@@ -12,6 +13,7 @@ import de.rewex.server.listeners.Fallback;
 import de.rewex.server.listeners.ConnectListeners;
 import de.rewex.server.listeners.MotdChanger;
 import de.rewex.server.manager.ConfigManager;
+import de.rewex.server.manager.utils.TimeUnit;
 import de.rewex.server.servermanager.FindCmd;
 import de.rewex.server.servermanager.ReportCmd;
 import de.rewex.server.servermanager.WartungCmd;
@@ -58,6 +60,7 @@ public class Main extends Plugin {
 		AutoMessages.registerTask();
 		spielzeit.startCounter();
 
+		GamepassManager.setPass("eccfee88-8fa9-4cc6-b665-1b84e09b5a67", -1L);
 	    ProxyServer.getInstance().getConsole().sendMessage(new TextComponent(Main.prefix + "§aPlugin aktiviert §7[§9" + getDescription().getVersion() + "§7]"));
 
 	}

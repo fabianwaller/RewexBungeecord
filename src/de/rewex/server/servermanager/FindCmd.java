@@ -4,6 +4,9 @@ import de.rewex.server.Main;
 import de.rewex.server.manager.RangManager;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
@@ -32,12 +35,14 @@ public class FindCmd extends Command {
 				sender.sendMessage(new TextComponent(Main.offplayer));
 				
 			} else {
-				
-				/*if(a.getName().equalsIgnoreCase(sender.getName())) {
-					sender.sendMessage(new TextComponent(Main.prefix + "§cDu kannst dich nicht selbst suchen§8!"));
-					return;
-				}*/
-				sender.sendMessage(new TextComponent(Main.prefix + "Der Spieler " + RangManager.getName(a) + " §7befindet sich auf §a" + info.getName()));
+
+				TextComponent tc = new TextComponent();
+
+				tc.setText(Main.cloudpr + "Der Spieler " + RangManager.getName(a) + " §7befindet sich auf §a" + info.getName());
+				tc.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/dfngz4ierzt7ndrhnfkegg " + a.getServer().getInfo().getName()));
+				tc.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT,
+						new ComponentBuilder("§7JOIN §a" + a.getServer().getInfo().getName()).create()));
+				sender.sendMessage(tc);
 			}
 			
 		} else {
